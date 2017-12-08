@@ -1,0 +1,122 @@
+\tableofcontents
+\chapter{Wprowadzenie}
+
+\section{Sztuczna Sieæ neuronowa - co to w³aœciwie jest?}
+
+Definicj¹ sztucznej sieci neuronowej jest zbiór prostych jednostek obliczeniowych przetwarzaj¹cych dane,
+komunikuj¹cych siê ze sob¹ i pracuj¹cych równolegle.
+
+\section{Typy Sieci Neuronowych}
+
+Wyró¿niamy 3 typy sieci neuronowych
+\begin{itemize}
+\item Sieci Jednokierunkowe
+\item Sieci Rekurencyjne
+\item Samoorganizuj¹ce siê mapy
+\end{itemize}
+
+
+
+
+
+
+
+\begin{flushleft}
+Tekst wyrównany do lewej.
+\end{flushleft}
+\begin{center}
+Tekst wyœrodkowany.
+\end{center}
+\begin{flushright}
+Tekst wyrównany do prawej.
+\end{flushright}
+\section{Podrozdzia³ 1}
+\section{Podrozdzia³ 2}
+
+\begin{itemize}
+\item[-] \textbf{Pogrubiony tekst.}
+\item \textit{Tekst pisany kursyw¹.}
+\end{itemize}
+\begin{enumerate}
+\item punkt pierwszy
+\item punkt drugi
+\end{enumerate}
+\subsection{Znaki Specjalne}
+Hasztag \# \\
+Backslash $\backslash$
+ Dolar $\$$
+
+ \begin{table} [h] 
+ \begin{tabular}{|l|c|p{7cm}|} 
+ \hline 
+ kom 11 & kom 12  \\ 
+ \hline 
+ \hline
+\multicolumn{2}{|c|}{kom 22 i 23}  \\ 
+\hline
+\multicolumn{2}{|l|}{kom 31 i kom 32}   \\ 
+\hline 
+ kom 41 & kom 42  \\ 
+ \hline 
+ \end{tabular} 
+ \centering 
+ \caption{tabela 1}\label{tab_1} 
+ 
+ \end{table}
+
+\ odwo³anie do tabeli (tab \ref{tab_1}):
+ \begin{verbatim}
+ 
+\begin{table} [h] 
+ \begin{tabular}{|l|c|p{7cm}|} 
+ \hline 
+ kom 11 & kom 12  \\ 
+ \hline 
+ \hline
+\multicolumn{2}{|c|}{kom 22 i 23}  \\ 
+\hline
+\multicolumn{2}{|l|}{kom 31 i kom 32}   \\ 
+\hline 
+ kom 41 & kom 42  \\ 
+ \hline 
+ \end{tabular} 
+ \centering 
+ \caption{tabela 1}\label{tab_1} 
+ 
+\end{verbatim}
+
+\begin{equation}\label{moje_równanie}
+\left(\prod_{i=\widetilde{j}}^{\infty}[\log(i^{\xi})]^{M}\le0 \leftrightarrow \sum_{i=\widetilde{j}}^{\infty}\sqrt{{i}\over{\widetilde{j}}} >
+\sqrt[p]{\widetilde{j}}\right )\Rightarrow \textrm{nic nie}\ wynika
+\end{equation}
+\newline
+\ Odwo³anie do równania  (\ref{moje_równanie}):
+\begin{verbatim}
+\begin{equation}\label{moje_równanie}
+\left(\prod_{i=\widetilde{j}}^{\infty}[\log(i^{\xi})]^{M}\le0
+ \leftrightarrow
+  \sum_{i=\widetilde{j}}^{\infty}\sqrt{{i}\over{\widetilde{j}}} >
+\sqrt[p]{\widetilde{j}}\right )\Rightarrow \textrm{nic nie}\ wynika
+\end{equation}
+\end{verbatim}
+
+
+
+\begin{figure}
+\raggedright
+  
+\caption{ dwa rysunki jeden nad drugim}\label{rysunek_1}
+
+\end{figure}
+
+\ Odwo³anie do rysunku (rys \ref{rysunek_1}):
+\begin{verbatim}
+\begin{figure}
+\raggedright
+\includegraphics[scale=0.35]{rysunek1.jpg}
+\includegraphics[scale=0.35]{rysunek1.jpg}  
+\caption{ dwa rysunki jeden nad drugim}\label{rysunek_1}
+
+\end{figure}
+\end{verbatim}
+ \end{document}

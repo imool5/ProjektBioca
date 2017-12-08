@@ -1,0 +1,253 @@
+% UWAGA: przeczytaj ten plik i skonfiguruj odpowidnio (``Ustawienia globalne X'')
+% potem dodaj w odpowiedniej sekcji swoje pakiet 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% USTAWIENIA GLOBALNE I 
+
+% czy wersja elektroniczna (pdf z kolorowymi linkami) czy nie (np. do druku)
+
+\newif\ifelektroniczna % nie ruszaæ tej linijki, odkomentowaæ odpowiedni¹ poni¿ej
+
+\elektronicznatrue
+%\elektronicznafalse
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% nie ruszaæ ca³ej tej sekcji
+\RequirePackage{ifpdf}
+\ifpdf
+    % uwaga, ustawiaj¹c coœ innego ni¿ 12 sprawdŸ uk³ad strony tytu³owej (marginesy)
+    \documentclass[pdftex,12pt,a4paper,oneside,colorlinks,nocenter,noupper,crosshair]{thesis}
+    \usepackage[pdftex]{graphicx}
+    \pdfcompresslevel=1
+\else    
+    \documentclass[12pt,a4paper,\strony,nocenter,noupper,crosshair]{thesis}
+    \usepackage{graphicx}
+\fi
+% nie ruszaæ
+\usepackage{url}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% USTAWIENIA GLOBALNE II - ustawiæ tytu³, autora i resztê
+
+%\usepackage[utf8]{inputenc}   % linuks/windows/mac; pozwala na ³atwe mieszanie znaków z ró¿nych jêzyków
+\usepackage[cp1250]{inputenc} % windows
+
+% PRZEDMIOT
+\def\przedmiot{Biocybernetyka}
+
+% TYTU£ ÆWICZENIA
+\def\tytul{Uczenie sztucznych sieci neuronowych - przegl¹d metod} % Proszê u¿yæ i ma³ych, i du¿ych liter!
+\def\tytulpdf{Uczenie sztucznych sieci neuronowych - przeglad metod} % jw. ale bez podzia³u na linie i BEZ POLSKICH LITER
+
+% AUTOR
+\def\autor{Daniel Imio³ek} %Jan Kowalski a NIE JAN KOWALSKI
+\def\autorpdf{Daniel Imiolek} % jw. ale bez podzia³u na linie i BEZ POLSKICH LITER
+
+% DATA
+\def\data{\today} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% USTAWIENIA GLOBALNE - czêœæ 2
+%
+% œcie¿ka do obrazków
+\graphicspath{{./rysunki/}}
+
+% przedefinowanie definicji z ustawieñ 1 dla piterwszej strony LaTeXa (raczej nie ruszaæ)
+\title{\przedmiot:\\\textbf{\tytul}}
+\author{\autor}
+\date{\data}
+
+% % ustawienia dla pdfa (raczej nie ruszaæ)
+ \ifpdf
+ \ifelektroniczna
+     \usepackage[pdfusetitle=true,
+	  pdfsubject={\tytulpdf},
+	        pdfkeywords={}, 
+		pdfcreator={\autorpdf},
+		pdfstartview=FitV,
+		linkcolor=blue,
+		citecolor=red,
+		]{hyperref}
+ \fi                 
+ \fi
+
+
+\usepackage{layout}% poka¿ marginesy
+
+% Nazwa za³¹czników 
+\def\appendixname{Za³¹cznik}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% === PAKIETY ===
+
+% ³adne czcionki dla PDF + ustawienia spolszczaj¹ce
+\usepackage{t1enc,amsmath}
+\usepackage[OT4,plmath]{polski}
+
+% pierwszy paragraf w rozdziale/sekcji powinien byæ wciêty
+\usepackage{indentfirst}
+
+% czcionki matematyczne
+\usepackage{amsfonts}
+
+% rysunki z³o¿one z wielu [pod]rysunków
+\usepackage{subfig}
+\captionsetup[subfigure]{justification=centerfirst}
+
+% mo¿liwoœæ sklejania wierszy tabeli
+\usepackage{multirow}
+
+% mo¿liwoœæ wklejania adresów - jest ju¿ w³¹czony wy¿ej
+%\usepackage{url}
+
+% ulepszona obs³uga cytowañ
+\usepackage{cite}
+
+% listingi
+\usepackage{listings}
+% domyœlne ustawienia (niestety utf8 w kodzie nie jest akceptowany)
+\lstset{language={Matlab},inputencoding=cp1250}
+\lstset{keywordstyle=\color{blue}\bfseries}
+%\lstset{language={Matlab},inputencoding=latin2}
+%\lstset{language={Java},inputencoding=cp1250} % powinno pasowaæ te¿ do C#
+%\lstset{language={Java},inputencoding=latin2} % powinno pasowaæ te¿ do C#
+
+% \addcontentsline nie dzia³a za dobrze w po³¹czeniu z hyperref, ale to nie dzia³a z klas¹ thesis
+%\usepackage[nottoc]{tocbibind}
+
+% strona po cleardoublepage powinna byæ pusta, nie z nag³ówkami
+\usepackage{cleardpempty}
+
+% == opcjonalne
+
+% wymuœ po³o¿enie grafiki (itp.) przez [H]
+\usepackage{float} 
+
+% znak promila i inne znaki specjalne
+%\usepackage{textcomp}
+
+% jeœli trzeba obróciæ stronê (wstawiæ coœ w orientacji poziomej), u¿yj tych pakietów
+%\ifpdf\usepackage{pdflscape}\else\usepackage{lscape}\fi
+
+% jeœli potrzebujesz d³ugich tabeli (wiele stron)
+%\usepackage{longtable}
+
+% === POLECENIA DODATKOWE ===
+
+% wektor w tekœcie
+\def\vec#1{\ensuremath{\mathbf{#1}}}
+
+% anglicyzmy i ³acinizmy
+\def\ang#1{ang.~\emph{#1}}
+\def\lat#1{³ac.~\emph{#1}}
+
+% proste e (jako podstawa logarytmu naturalnego) we wzorach i w tekœcie:
+\def\e{\ensuremath{\textrm{\normalfont{}e}}}
+
+% znak stopnia [jak w "5 stopni"]
+\def\stopien{\ensuremath{^{\circ}}\protect\space}
+
+% notatki na marginesie
+\def\fixme#1{\marginpar{\tiny{}#1}}
+%\def\fixme#1{} % gdy nie chcemy ich drukowaæ, wystarczy zast¹piæ powy¿sze tym
+
+%ODNOSNIKI 
+% ¿eby wykorzystaæ przypis dwukrotnie; druga wersja gorzej dzia³a³a w po³¹czeniu 
+% z hyperref; czyli \footnote{blablabla \label{przypisX}} + \footnotereuse{przypisX}
+%\newcommand{\footnreuse}[1]{\raisebox{1ex}{\scriptsize{}\protect\ref{#1}}}
+
+% == ŒRODOWISKA DLA TWIERDZEÑ, LEMATÓW itp. ===
+\newtheorem{twierdzenie}{Twierdzenie}[chapter]
+\newtheorem{wlasnosc}{W³asnoœæ}[chapter]
+\newtheorem{lemat}{Lemat}[chapter]
+\newenvironment{dowod}{\parindent=0pt{\bf Dowód. }}{\begin{flushright}$\square$\end{flushright}}
+
+% === RACZEJ NIE RUSZAÆ ===
+
+%\usepackage{makeidx}
+%\makeindex
+%\usepackage{threeparttable}
+%\usepackage[small,center]{caption2}
+
+\def\captionlabeldelim{.}
+
+%\usepackage{geometry}
+%GATHER{thesis.bib}
+%\usepackage[twoside]{geometry}
+%\geometry{ lmargin=3.5cm, rmargin=2.5cm, tmargin=3cm, bmargin=3cm,
+%headheight=1cm, headsep=0.5cm, footskip=0pt }
+
+\linespread{1}
+\chapterfont{\Huge\bfseries}
+\sectionfont{\bfseries\Large}
+\subsectionfont{\bfseries\large}
+\institutionfont{\bfseries}%\mdseries}
+\def\captionlabelfont{\bfseries}
+
+\renewcommand{\figureshortname}{Rys.}
+\renewcommand{\tableshortname}{Tab.}
+
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\newcommand{\topcaption}{%                  % robi podpis nad tabelk¹ z odstêpem po podpisie
+   \setlength{\abovecaptionskip}{0pt}%
+   \setlength{\belowcaptionskip}{10pt}%
+   \caption}
+
+
+% marginesy
+\usepackage{anysize}
+\marginsize{3cm}{2.5cm}{2.5cm}{2.5cm}%LPGD
+
+% strona tytu³owa
+\usepackage{title}
+
+
+
+% DOKUMENT
+
+\begin{document}\bibliographystyle{acm}
+
+% nie ruszaæ
+\title{\przedmiot\\ \tytul}
+%\date{\data}
+
+\author{\autor}
+\graduationdate{Zabrze, \data}
+
+\frontmatter 
+\titlepages
+\cleardoublepage % jeœli dwustronnie, to druga strona powinna byæ pusta
+
+%spisy - raczej nie s¹ potrzebne w sprawozdaniu
+%\tableofcontents \listoffigures \listoftables \listofacros
+
+\mainmatter % <--- to + frontmatter powy¿ej odpowiada za fakt, ¿e numerowanie jest od 1!
+
+% treœæ z formatki pracy magisterskiej/projektu
+%\chapter{UWAGA}
+%
+%Dalsza treœæ jest identyczna z tym znalezionym w formatce projektu in¿ynierskiego/pracy magisterskiej
+%z~dnia 1.1.2013. S³u¿y wy³¹cznie ilustracji sposobu do³¹czania poszczególnych elementów.
+
+\input{Rozdzialy}
+
+%\appendix  % <--- zaczynaj¹ siê dodatki; jak nazywa siê rozdzia³ -> szukaæ appendixname powy¿ej
+%\input{Dodatek_A}
+
+%\clearpage \addcontentsline{toc}{chapter}{\bibname}
+%\bibliography{Praca} % bibtex
+
+
+\end{document}
