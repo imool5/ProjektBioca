@@ -15,6 +15,29 @@ Wyró¿niamy 3 typy sieci neuronowych
 \item Samoorganizuj¹ce siê mapy
 \end{itemize}
 
+\chapter{Sztuczne Sieci Neuronowe}
+
+\section{Metoda regu³y delta}
+Regu³a delta jest regu³¹ uczenia z nauczycielem. Polega ona na tym, ¿e ka¿dy neuron po otrzymaniu na swoich wejœciach okreœlone sygna³y (z wejœæ sieci albo od innych neuronów, stanowi¹cych wczeœniejsze piêtra przetwarzania informacji) wyznacza swój sygna³ wyjœciowy wykorzystuj¹c posiadan¹ wiedzê w postaci wczeœniej ustalonych wartoœci wspó³czynników wzmocnienia (wag) wszystkich wejœæ oraz (ewentualnie) progu. Sposoby wyznaczania przez neurony wartoœci sygna³ów wyjœciowych na podstawie sygna³ów wejœciowych omówione zosta³y dok³adniej w poprzednim rozdziale. Wartoœæ sygna³u wyjœciowego, wyznaczonego przez neuron na danym kroku procesu uczenia porównywana jest z odpowiedzi¹ wzorcow¹ podan¹ przez nauczyciela w ci¹gu ucz¹cym. Jeœli wystêpuje rozbie¿noœæ - neuron wyznacza ró¿nicê pomiêdzy swoim sygna³em wyjœciowym a t¹ wartoœci¹ sygna³u, która by³a by - wed³ug nauczyciela prawid³owa. Ta ró¿nica oznaczana jest zwykle symbolem greckiej litery delta i st¹d nazwa opisywanej metody. 
+
+Sygna³ b³êdu wykorzystywany jest przez neuron do korygowania swoich wspó³czynników wagowych:
+\begin{itemize}
+\item wagi zmieniane s¹ tym silniej, im wiêkszy jest b³¹d
+\item wagi zwi¹zane z tymi wejœciami, na których wystêpowa³y du¿e wartoœci sygna³ów wejœciowych zmieniane s¹ bardziej ni¿ wagi wejœæ, na których sygna³ wejœciowy by³ niewielki
+
+\end{itemize}
+
+Znaj¹c b³¹d pope³niony przez neuron oraz jego wagi wejsciowe mozemy latwo przewidziec jak beda siê zmieniac jego wagi.
+
+\includegraphics[scale=0.7]{rysunki/Deltawzor.png} 
+
+\section{Metoda wstecznej propagacji b³êdów}
+
+
+
+
+
+
 
 
 
