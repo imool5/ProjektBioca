@@ -18,6 +18,7 @@ Wyró¿niamy 3 typy sieci neuronowych
 \chapter{Sztuczne Sieci Neuronowe}
 
 \section{Metoda regu³y delta}
+Regu³a Delta zosta³a opracowana przez Widrowa i Hoffa, znalaz³a ona zastosowanie do uczenia elementów liniowych i nieliniowych.
 Regu³a delta jest regu³¹ uczenia z nauczycielem. Polega ona na tym, ¿e ka¿dy neuron po otrzymaniu na swoich wejœciach okreœlone sygna³y (z wejœæ sieci albo od innych neuronów, stanowi¹cych wczeœniejsze piêtra przetwarzania informacji) wyznacza swój sygna³ wyjœciowy wykorzystuj¹c posiadan¹ wiedzê w postaci wczeœniej ustalonych wartoœci wspó³czynników wzmocnienia (wag) wszystkich wejœæ oraz (ewentualnie) progu. Sposoby wyznaczania przez neurony wartoœci sygna³ów wyjœciowych na podstawie sygna³ów wejœciowych omówione zosta³y dok³adniej w poprzednim rozdziale. Wartoœæ sygna³u wyjœciowego, wyznaczonego przez neuron na danym kroku procesu uczenia porównywana jest z odpowiedzi¹ wzorcow¹ podan¹ przez nauczyciela w ci¹gu ucz¹cym. Jeœli wystêpuje rozbie¿noœæ - neuron wyznacza ró¿nicê pomiêdzy swoim sygna³em wyjœciowym a t¹ wartoœci¹ sygna³u, która by³a by - wed³ug nauczyciela prawid³owa. Ta ró¿nica oznaczana jest zwykle symbolem greckiej litery delta i st¹d nazwa opisywanej metody. 
 
 Sygna³ b³êdu wykorzystywany jest przez neuron do korygowania swoich wspó³czynników wagowych:
@@ -33,8 +34,9 @@ Znaj¹c b³¹d pope³niony przez neuron oraz jego wagi wejsciowe mozemy latwo przewi
 
 \section{Metoda wstecznej propagacji b³êdów}
 
+Przez wiele lat nie znaleziono skutecznej metody uczenia sieci wielowarstwowych, dopiero w latach 80-tych zapropownowany zosta³ algorytm wstecznej propagacji b³êdów polegaj¹cy na tym, ¿e maj¹c wyznaczony b³¹d $\delta_m^{(j)}$ wystêpuj¹cy podczas realizacji j-tego kroku procesu uczenia w neuronie o numerze \textit{m} mo¿na podawaæ ten b³¹d wstecz do wszystkich tych neuronów, których sygna³y stanowi³y wejœcia dla m-tego neuronu.
 
-
+Uczenie odbywa siê przez minimalizacjê odpowiednio zdefiniowanej funkcji celu Q(W), przy czym wektor W reprezentuje wagi sieci poddawane optymalizacji. Najprostsza funkcja celu ma postaæ b³êdu œredniokwadratowego. Zastosowanie ró¿niczkowalnej funkcji aktywacji umo¿liwia minimalizacjê funkcji celu metodami gradientowymi.
 
 
 
@@ -142,4 +144,16 @@ Backslash $\backslash$
 
 \end{figure}
 \end{verbatim}
+
+\chapter{Bibliografia}
+\begin{verbatim}
+http://www.dbc.wroc.pl/Content/1908/Rusiecki_Algorytmy_PhD.pdf
+
+https://platforma.polsl.pl/rib/pluginfile.php/2498/mod_resource/content/2/Laboratorium/04_BProp.pdf
+
+http://www.neurosoft.edu.pl/media/pdf/tkwater/sztuczna_inteligencja/2_alg_ucz_ssn.pdf
+\end{verbatim}
+
+
+
  \end{document}
