@@ -5,8 +5,9 @@
 \contentsline {section}{\numberline {2.1}Metoda regu\IeC {\l }y delta}{3}{section.2.1}
 \contentsline {section}{\numberline {2.2}Metoda wstecznej propagacji b\IeC {\l }\k ed\'ow}{4}{section.2.2}
 \contentsline {section}{\numberline {2.3}Sie\'c Hopfielda}{4}{section.2.3}
-\contentsline {section}{\numberline {2.4}Sieci Kohonena}{4}{section.2.4}
-\contentsline {section}{\numberline {2.5}Podrozdzia\IeC {\l } 1}{4}{section.2.5}
-\contentsline {section}{\numberline {2.6}Podrozdzia\IeC {\l } 2}{4}{section.2.6}
+\contentsline {subsection}{\numberline {2.3.1}Metody uczenia sieci}{4}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}Sieci Kohonena}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}Podrozdzia\IeC {\l } 1}{5}{section.2.5}
+\contentsline {section}{\numberline {2.6}Podrozdzia\IeC {\l } 2}{5}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Znaki Specjalne}{5}{subsection.2.6.1}
 \contentsline {chapter}{\numberline {3.}Bibliografia}{7}{chapter.3}
