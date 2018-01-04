@@ -38,21 +38,53 @@ Przez wiele lat nie znaleziono skutecznej metody uczenia sieci wielowarstwowych,
 
 Uczenie odbywa siê przez minimalizacjê odpowiednio zdefiniowanej funkcji celu Q(W), przy czym wektor W reprezentuje wagi sieci poddawane optymalizacji. Najprostsza funkcja celu ma postaæ b³êdu œredniokwadratowego. Zastosowanie ró¿niczkowalnej funkcji aktywacji umo¿liwia minimalizacjê funkcji celu metodami gradientowymi.
 
+Najproœciej mówi¹c celem tej metody jest zoptymalizowanie wag, aby sieæ neuronowa mog³a siê nauczyæ poprawnie mapowaæ dowolne wejœcia na wyjœcia.
+
+Schemat dzia³ania metody wstecznej propagacji b³êdów.
+\begin{itemize}
+\item[1] Wyznaczenie odpowiedzi neuronów warstwy wyjœciowej oraz warstw ukrytych na
+zadany sygna³ wejœciowy.
+\item[2] Wyznaczenie b³êdu pope³nianego przez neurony znajduj¹ce siê w warstwie
+wyjœciowej i przes³anie go w kierunku warstwy wejœciowej.
+\item[3] Adaptacja wag. 
+\end{itemize}
+%http://www.neurosoft.edu.pl/media/pdf/jbartman/sztuczna_inteligencja/NTI%20cwiczenie_5.pdf
+
 \section{Sieæ Hopfielda}
 \begin{verbatim}
 http://th-www.if.uj.edu.pl/~erichter/dydaktyka/Dydaktyka2012/SieciNN-2012/NN-wyklad-6-2012.pdf
+
+https://www.mimuw.edu.pl/~rlatkows/publications/latkowski1999sieci.pdf
+
+Pseudoinwersja z instrukcji
 \end{verbatim}
 
 
 Sieæ Hopfielda jest najbardziej znan¹ sieci¹, w której kierunek przep³ywu sygna³ów jest odwrócony, posiada sprzê¿enia zwrotne typu ka¿dy z ka¿dym, jest prostym przyk³adem sieci rekurencyjnej i czêsto jest nazywana autoasocjatorem, a w ramach tego sprzê¿enia ka¿dy neuron jest po³¹czony z jednym z wejœæ oraz z w³asnym wyjœciem.
-\includegraphics[scale=0.7]{rysunki/Hopfield1.PNG} 
-\subsection{Metody uczenia sieci}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{rysunki/Hopfield1.PNG} 
+\caption{Schemat sieci Hopfielda}
+\end{figure}
+
+\linebreak  
 W sieciach hopfielda wykorzystujemy uczenie oparte na pseudoinwersji macierzy. Tak dobieramy wagi, aby uzyskaæ na wyjœciu takie same wzorce jakie podajemy na wejœciu.
 \begin{equation}
 \left. WX=
 \right. X
 \end{equation}
 gdzie \textbf{W} to macierz wag o wymiarze n x n, a \textbf{X} to macierz wzorców o wymiarze n x p z³o¿on¹ z p wektorów ucz¹cych.
+
+Jednym z wa¿niejszych osi¹gniêæ pracy Hopfielda jest pojêcie funkcji energetycznej w sieciach neuronowych.
+Najwa¿niejsz¹ w³asnoœci¹ funkcji energetycznej jest to, ¿e zawsze maleje lub pozostaje sta³a, gdy uk³ad ewoluuje zgodnie z regu³¹
+
+\includegraphics[scale=0.8]{rysunki/Hopfieldregula.PNG} 
+
+W ten sposób wzorce le¿¹ w minimach lokalnych powierzchni funkcji energetycznej.
+
+Dla sieci neuronowych funkcja energetyczna istnieje, gdy wagi po³¹czeñ s¹ symetryczne.
+
+
 \section{Sieci Kohonena}
 
 
