@@ -5,7 +5,14 @@
 
 Definicj¹ sztucznej sieci neuronowej jest zbiór prostych jednostek obliczeniowych przetwarzaj¹cych dane,
 komunikuj¹cych siê ze sob¹ i pracuj¹cych równolegle.
-
+Pierwowzorem wszystkich sieci neuronowych jest ludzki mózg, dlatego mo¿na powiedzieæ, ¿e sztuczna sieæ nieuronowa jest bardzo uproszczonym modelem mózgu.
+\section{Historia}
+Pocz¹tki sieci neuronowych datuje siê na rok 1943 wraz z wydaniem historycznej pracy McCulloch'a i Pitts'a, w której po raz pierwszy przedstawiono matematyczny opis komórki nerwowej oraz powi¹zanie go z problemem przetwarzania danych. W 1949 roku Donald Hebb, odkry³, ¿e informacja mo¿e byæ przechowywana w strukturze po³¹czeñ pomiêdzy neuronami i jako pierwszy zaproponowa³ metodê uczenia sieci polegaj¹c¹ na zmianach wag po³¹czeñ miêdzy neuronami. W latach 50-tych budowano pierwsze sieci neuronowe.
+Pierwszym szeroko znanym przyk³adem zbudowanej i ciekawej dzia³aj¹cej sieci neuronopodobnej jest perceptron wymyœlony przez Rosenblatta. Sieæ ta by³a przedstawiona jako uk³ad czêœciowo elektromechaniczny, czêœciowo elektroniczny. Zbudowana zosta³a ona w Cornell Aeronautical Laboratory. Zadaniem tej sieci by³o rozpoznawanie znaków. Po wielu próbach okaza³o siê, ¿e sieæ nie potrafi³a rozpoznaæ z³o¿onych znaków i by³a wra¿liwa na zmianê skali obiektów i ich po³o¿enie. Zalet¹ by³a zdolnoœæ do zachowania poprawnego dzia³ania nawet po uszkodzeniu pewnej czêœci elementów.
+Po og³oszeniu wyników przez twórców nast¹pi³ gwa³towny rozwój tego typu sieci neuronowych na ca³ym œwiecie.
+Kolejnym prze³omem by³o zbudowanie sieci elektrochemicznej ucz¹cej siê z elementów Adaline w 1960r. przez Bernarda Widrowa. Sieæ ta sk³ada³a siê z elementów Adaline, które powielone oraz po³¹czone da³y uk³ad Madaline (Many Adaline). Sieæ Madaline wykorzystywana jest w radarach, sonarach, modemach i liniach telefonicznych. Rozwój sieci neuronowych zosta³ gwa³townie zahamowany na pocz¹tku lat 70-tych, gdy Minsky i Papert dowiedli, ¿e sieci jednowarstwowe maj¹ bardzo ograniczony zakres zastosowañ.
+Taki stan utrzymywa³ siê blisko 15 lat, a¿ do ukazania publikacji, ¿e sieci nieliniowe s¹ wolne od ograniczeñ, które wykazali Minsky i Papert w swoich pracach. W 1982r. Kohonen opracowa³ sieci do wydobywania cech, ucz¹ce siê bez nauczyciela.
+W latach 80-tych pojawi³y siê pierwsze sieci ze sprzê¿eniem zwrotnym, w których rozwi¹zanie zadañ polega³o na poszukiwaniu przez sieæ stanu równowagi w d³ugim iteracyjnym procesie dynamicznym. Przyk³adem jest opracowana w 1982 roku przez Johna Hopfielda teoria komiwoja¿era. Badania sieci neuronowych i ich rozwój jest mocno rozwijany do dziœ.
 \section{Typy Sieci Neuronowych}
 
 Wyró¿niamy 3 typy sieci neuronowych
@@ -14,12 +21,17 @@ Wyró¿niamy 3 typy sieci neuronowych
 \item Sieci Rekurencyjne
 \item Samoorganizuj¹ce siê mapy
 \end{itemize}
+Sieci mo¿emy te¿ podzieliæ ze wzglêdu na metody uczenia sieci neuronowych
+\begin{itemize}
+\item Sieci z nauczycielem (Uczenie nadzorowane)
+\item Sieci bez nauczyciela (Uczenie nienadzorowane)
 
+\end{itemize}
 \chapter{Sztuczne Sieci Neuronowe}
 
 \section{Metoda regu³y delta}
 Regu³a Delta zosta³a opracowana przez Widrowa i Hoffa, znalaz³a ona zastosowanie do uczenia elementów liniowych i nieliniowych.
-Regu³a delta jest regu³¹ uczenia z nauczycielem. Polega ona na tym, ¿e ka¿dy neuron po otrzymaniu na swoich wejœciach okreœlone sygna³y (z wejœæ sieci albo od innych neuronów, stanowi¹cych wczeœniejsze piêtra przetwarzania informacji) wyznacza swój sygna³ wyjœciowy wykorzystuj¹c posiadan¹ wiedzê w postaci wczeœniej ustalonych wartoœci wspó³czynników wzmocnienia (wag) wszystkich wejœæ oraz (ewentualnie) progu. Sposoby wyznaczania przez neurony wartoœci sygna³ów wyjœciowych na podstawie sygna³ów wejœciowych omówione zosta³y dok³adniej w poprzednim rozdziale. Wartoœæ sygna³u wyjœciowego, wyznaczonego przez neuron na danym kroku procesu uczenia porównywana jest z odpowiedzi¹ wzorcow¹ podan¹ przez nauczyciela w ci¹gu ucz¹cym. Jeœli wystêpuje rozbie¿noœæ - neuron wyznacza ró¿nicê pomiêdzy swoim sygna³em wyjœciowym a t¹ wartoœci¹ sygna³u, która by³a by - wed³ug nauczyciela prawid³owa. Ta ró¿nica oznaczana jest zwykle symbolem greckiej litery delta i st¹d nazwa opisywanej metody. 
+Regu³a delta jest regu³¹ uczenia z nauczycielem. Polega ona na tym, ¿e ka¿dy neuron po otrzymaniu na swoich wejœciach okreœlone sygna³y (z wejœæ sieci albo od innych neuronów, stanowi¹cych wczeœniejsze piêtra przetwarzania informacji) wyznacza swój sygna³ wyjœciowy wykorzystuj¹c posiadan¹ wiedzê w postaci wczeœniej ustalonych wartoœci wspó³czynników wzmocnienia wag wszystkich wejœæ oraz ewentualnie progu. Wartoœæ sygna³u wyjœciowego, wyznaczonego przez neuron na danym kroku procesu uczenia porównywana jest z odpowiedzi¹ wzorcow¹ podan¹ przez nauczyciela w ci¹gu ucz¹cym. Jeœli wystêpuje rozbie¿noœæ - neuron wyznacza ró¿nicê pomiêdzy swoim sygna³em wyjœciowym a t¹ wartoœci¹ sygna³u, która by³a by - wed³ug nauczyciela prawid³owa. Ta ró¿nica oznaczana jest zwykle symbolem greckiej litery delta i st¹d nazwa opisywanej metody. 
 
 Sygna³ b³êdu wykorzystywany jest przez neuron do korygowania swoich wspó³czynników wagowych:
 \begin{itemize}
@@ -36,7 +48,27 @@ Znaj¹c b³¹d pope³niony przez neuron oraz jego wagi wejsciowe mozemy latwo przewi
 
 Przez wiele lat nie znaleziono skutecznej metody uczenia sieci wielowarstwowych, dopiero w latach 80-tych zapropownowany zosta³ algorytm wstecznej propagacji b³êdów polegaj¹cy na tym, ¿e maj¹c wyznaczony b³¹d $\delta_m^{(j)}$ wystêpuj¹cy podczas realizacji j-tego kroku procesu uczenia w neuronie o numerze \textit{m} mo¿na podawaæ ten b³¹d wstecz do wszystkich tych neuronów, których sygna³y stanowi³y wejœcia dla m-tego neuronu.
 
+
+
+
 Uczenie odbywa siê przez minimalizacjê odpowiednio zdefiniowanej funkcji celu Q(W), przy czym wektor W reprezentuje wagi sieci poddawane optymalizacji. Najprostsza funkcja celu ma postaæ b³êdu œredniokwadratowego. Zastosowanie ró¿niczkowalnej funkcji aktywacji umo¿liwia minimalizacjê funkcji celu metodami gradientowymi.
+
+Wzór na wyznaczenie b³êdu sieci
+
+$Error_{i}=Output_{i}(1-Output_{i})(Actual_{i} - Output_{i})$
+
+Gdzie:
+
+$Error_{i}$ jest b³êdem osi¹gniêtym w wêŸle i-tym
+
+$Output_{i}$ jest wartoœci¹ przewidzian¹ przez sieæ
+
+$Actual_{i}$ jest wartoœci¹ rzeczywist¹, której sieæ powinna siê nauczyæ
+\begin{figure}
+\centering
+\includegraphics[scale=2.3]{rysunki/backpropagation1.jpg} 
+\caption{Schemat sieci} 
+\end{figure}
 
 Najproœciej mówi¹c celem tej metody jest zoptymalizowanie wag, aby sieæ neuronowa mog³a siê nauczyæ poprawnie mapowaæ dowolne wejœcia na wyjœcia.
 
@@ -66,8 +98,7 @@ Sieæ Hopfielda jest najbardziej znan¹ sieci¹, w której kierunek przep³ywu sygna³
 \includegraphics[scale=0.8]{rysunki/Hopfield1.PNG} 
 \caption{Schemat sieci Hopfielda}
 \end{figure}
-
-\linebreak  
+  
 W sieciach hopfielda wykorzystujemy uczenie oparte na pseudoinwersji macierzy. Tak dobieramy wagi, aby uzyskaæ na wyjœciu takie same wzorce jakie podajemy na wejœciu.
 \begin{equation}
 \left. WX=
@@ -83,124 +114,123 @@ Najwa¿niejsz¹ w³asnoœci¹ funkcji energetycznej jest to, ¿e zawsze maleje lub poz
 W ten sposób wzorce le¿¹ w minimach lokalnych powierzchni funkcji energetycznej.
 
 Dla sieci neuronowych funkcja energetyczna istnieje, gdy wagi po³¹czeñ s¹ symetryczne.
+\subsection{Maszyna Boltzmanna}
+Z sieci¹ Hopfielda kojarzona jest zwykle Maszyna Boltzmanna.
+Koncepcja tej maszyny oparta jest na za³o¿eniu, ¿e stan (sygna³ wyjœciowy) ka¿dego neuronu mo¿e siê zmieniaæ w sposób losowy z okreœlonym prawdopodobieñstwem.
+Prawdopodobieñstwo to zale¿y od "energii" i "temperatury" sieci podobnie jak w systemach termodynamicznych, w których gêstoœæ prawdopodobieñstwa energii systemu zwi¹zana jest z temperatur¹. Przek³adaj¹c te informacje bardziej w informatyczny sposób, mo¿emy na ka¿dym kroku \textit{j} zwi¹zaæ z neuronem o numerze \textit{m} energiê $E_{m}^{(j)}$ wyra¿aj¹c¹ nadwy¿kê jego ³¹cznego pobudzenia  $e_{m}^{(j)}$ ponad progiem pobudzenia $w_{0}^{(m)}$.
+\begin{equation}
+ E_{m}^{(j)} = e_{m}^{(j)} - w_{0}^{(m)}
+\end{equation}
+
+Nastêpnie w oparciu o t¹ energiê wyznaczane jest prawdopodobieñstwo zgodnie z regu³¹ bêd¹c¹ uogólnieniem prawa Boltzmanna.
+\begin{figure}[h]
+
+\centering
+\includegraphics[scale=1]{rysunki/boltzman1.PNG} 
+\end{figure}
+
+gdzie $\delta$ jest pewn¹ arbitralnie dobieran¹ sta³¹, a $T^{(j)}$ reprezentuje symulowan¹  w \textit{j-tym} kroku "temperaturê" sieci.
 
 
 \section{Sieci Kohonena}
+Sieæ Kohonena jest przyk³adem sieci samoorganizuj¹cej siê i nienadzorowanej - bez nauczyciela.Sk³ada siê z 2 warstw. Warstwy wejœciowej - wektorów wejœciowych i warstwy wyjœciowej - mapy topologicznej. Sieæ Kohonena jest sieci¹ jednokierunkow¹. Sieæ ta wyró¿nia siê tym od innych sieci, ¿e zachowuje odwzorowanie s¹siedztwa przestrzeni wejœciowej. Wynikiem dzia³ania sieci jest klasyfikacja przestrzeni w sposób grupuj¹cy zarówno przypadki ze zbioru ucz¹cego, jak i wszystkie inne wprowadzenia po procesie uczenia. Najczêœciej u¿ywan¹ map¹ wynikow¹ jest mapa dwuwymiarowa, analizowane dane maj¹ byæ na niej odwzorowane.
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{rysunki/Kohonenmapa.PNG} 
+\caption{Przyk³adowe mapy dwuwymiarowe - siatka heksagonalna i prostok¹tna}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{rysunki/Kohonen1.PNG} 
+\caption{Struktura sieci Kohonena}
+\end{figure}
 
-
-
-
-
-
-
-\begin{flushleft}
-Tekst wyrównany do lewej.
-\end{flushleft}
-\begin{center}
-Tekst wyœrodkowany.
-\end{center}
-\begin{flushright}
-Tekst wyrównany do prawej.
-\end{flushright}
-\section{Podrozdzia³ 1}
-\section{Podrozdzia³ 2}
-
+Zasady dzia³ania sieci Kohonena:
 \begin{itemize}
-\item[-] \textbf{Pogrubiony tekst.}
-\item \textit{Tekst pisany kursyw¹.}
+\item Wejœcia (tyle, iloma parametrami opisano obiekty) po³¹czone s¹ ze wszystkimi wêz³ami sieci
+\item Ka¿dy wêze³ przechowuje wektor wag o wymiarze identycznym z wektorami wejœciowymi
+\item Ka¿dy wêze³ oblicza swój poziom aktywacji jako iloczyn skalarny wektora wag i wektora wejœciowego (podobnie jak w zwyk³ym neuronie)
+\item Ten wêze³, który dla danego wektora wejœciowego ma najwy¿szy poziom aktywacji, zostaje zwyciêzc¹ i jest uaktywniony
+\item Wzmacniamy podobieñstwo wêz³a-zwyciêzcy do aktualnych danych wejœciowych poprzez dodanie do wektora wag wektora wejœciowego (z pewnym wspó³czynnikiem uczenia)
+\item Ka¿dy wêze³ mo¿e byæ stowarzyszony z pewnymi innymi, s¹siednimi wêz³ami - wówczas te wêz³y równie¿ zostaj¹ zmodyfikowane, jednak w mniejszym stopniu.
+\item Neurony w poszczególnych warstwach nie mog¹ siê komunikowaæ miêdzy sob¹.
+
 \end{itemize}
-\begin{enumerate}
-\item punkt pierwszy
-\item punkt drugi
-\end{enumerate}
-\subsection{Znaki Specjalne}
-Hasztag \# \\
-Backslash $\backslash$
- Dolar $\$$
+Tak jak wczeœniej wspomniano, przy uczeniu siê mapy w sieci Kohonena wa¿n¹ rolê odgrywa s¹siedztwo neuronów. Wyznacza siê je wed³ug po³o¿enia wektorów referencyjnych na mapie. S¹siedztwo neuronu oznaczonego numerem c Bêdziemy oznaczaæ $N_{c}$ .
 
- \begin{table} [h] 
- \begin{tabular}{|l|c|p{7cm}|} 
- \hline 
- kom 11 & kom 12  \\ 
- \hline 
- \hline
-\multicolumn{2}{|c|}{kom 22 i 23}  \\ 
-\hline
-\multicolumn{2}{|l|}{kom 31 i kom 32}   \\ 
-\hline 
- kom 41 & kom 42  \\ 
- \hline 
- \end{tabular} 
- \centering 
- \caption{tabela 1}\label{tab_1} 
- 
- \end{table}
-
-\ odwo³anie do tabeli (tab \ref{tab_1}):
- \begin{verbatim}
- 
-\begin{table} [h] 
- \begin{tabular}{|l|c|p{7cm}|} 
- \hline 
- kom 11 & kom 12  \\ 
- \hline 
- \hline
-\multicolumn{2}{|c|}{kom 22 i 23}  \\ 
-\hline
-\multicolumn{2}{|l|}{kom 31 i kom 32}   \\ 
-\hline 
- kom 41 & kom 42  \\ 
- \hline 
- \end{tabular} 
- \centering 
- \caption{tabela 1}\label{tab_1} 
- 
-\end{verbatim}
-
-\begin{equation}\label{moje_równanie}
-\left(\prod_{i=\widetilde{j}}^{\infty}[\log(i^{\xi})]^{M}\le0 \leftrightarrow \sum_{i=\widetilde{j}}^{\infty}\sqrt{{i}\over{\widetilde{j}}} >
-\sqrt[p]{\widetilde{j}}\right )\Rightarrow \textrm{nic nie}\ wynika
-\end{equation}
-\newline
-\ Odwo³anie do równania  (\ref{moje_równanie}):
-\begin{verbatim}
-\begin{equation}\label{moje_równanie}
-\left(\prod_{i=\widetilde{j}}^{\infty}[\log(i^{\xi})]^{M}\le0
- \leftrightarrow
-  \sum_{i=\widetilde{j}}^{\infty}\sqrt{{i}\over{\widetilde{j}}} >
-\sqrt[p]{\widetilde{j}}\right )\Rightarrow \textrm{nic nie}\ wynika
-\end{equation}
-\end{verbatim}
-
-
-
+Wa¿nym pojêciem jest równie¿ zasiêg s¹siedztwa, który zazwyczaj zmniejsza siê podczas uczenia.
 \begin{figure}
-\raggedright
-  
-\caption{ dwa rysunki jeden nad drugim}\label{rysunek_1}
-
+\centering
+\includegraphics[scale=0.5]{rysunki/kohonensasiedztwo.PNG} 
+\caption{Zmniejszanie siê zasiêgu s¹siedztwa, wraz z kolejnymi iteracjami}
 \end{figure}
 
-\ Odwo³anie do rysunku (rys \ref{rysunek_1}):
-\begin{verbatim}
-\begin{figure}
-\raggedright
-\includegraphics[scale=0.35]{rysunek1.jpg}
-\includegraphics[scale=0.35]{rysunek1.jpg}  
-\caption{ dwa rysunki jeden nad drugim}\label{rysunek_1}
+Inicjalizacja wag sieci Kohonena jest losowa. Wektory wejœciowe stanowi¹ próbê ucz¹c¹, podobnie jak w przypadku zwyk³ych sieci rozpatrywan¹ w pêtli podczas budowy mapy. Wykorzystanie utworzonej w ten sposób mapy polega na tym, ¿e zbiór obiektów umieszczamy na wejœciu sieci i obserwujemy, które wêz³y sieci siê uaktywniaj¹. Obiekty podobne powinny trafiaæ w podobne miejsca mapy.
+Na ogó³ uczenie przebiega w dwóch fazach. Najpierw przyjmuje siê du¿y promieñ s¹siedztwa i du¿y wspó³czynnik uczenia. W drugiej fazie obydwie te wielkoœci ulegaj¹ zmniejszeniu, w szczególnoœci promieñ s¹siedztwa spada do zera.
+Pierwsza faza przebiega wed³ug zasady Winner Takes Most, gdzie zwyciêski neuron zostaje najbardziej zmodyfikowany, ale udzia³ w modyfikacji bior¹ tak¿e jego s¹siedzi ( zale¿nie od odleg³oœci od zwyciêzcy).
+Zmiana wag w 1 fazie nastêpuje wed³ug wzoru \ref{kohonenwzor1}.
+W drugiej fazie uczenia obowi¹zuje zasada Winner Takes All, gdzie zwyciêzca bierze wszystko, a s¹siedzi nie s¹ modyfikowani, poniewa¿ promieñ s¹siedztwa zmala³ do zera, zmienia siê tylko wektor wagowy $w_{c}$ Wzór: (\ref{kohonenwzor2}).
 
+\begin{figure}
+
+\centering
+\includegraphics[scale=0.5]{rysunki/kohonenwzor1.PNG} 
+\caption{Pierwszy wzór i opis uczenia siê sieci kohonena} 
+\label{kohonenwzor1}
 \end{figure}
-\end{verbatim}
+
+\begin{figure}
+
+\centering
+\includegraphics[scale=0.5]{rysunki/kohonenwzor2.PNG} 
+\caption{Drugi wzór uczenia siê sieci kohonena}
+\label{kohonenwzor2}
+\end{figure}
+\chapter{Podsumowanie}
+
+SOM Self Organizing Maps
+sieæ uczy siê bez nadzoru
+sieæ sk³ada siê z dwóch warstw o wyraŸnie rozdzielonych funkcjach
+uporz¹dkowane neurony wyjœciowe
+uczony g³ównie neuron zwyciêski
+wa¿na rola s¹siedztwa
+w wyniku uczenia powstaje mapa topologiczna
+aprioryczna interpretacja wartosci wyjsciowych jest neimozliwa
+
+
+Sieci jednokierunkowe
+Zbudowane z 1 lub kilku warstw
+Przep³yw sygna³u w tego typu sieciach przebiega zawsze w œciœle
+okreœlonym kierunku: od warstwy wejœciowej do warstwy
+wyjœciowej.
+Ka¿da dodatkowa warstwa pomiêdzy warstwami wejœciow¹ i
+wyjœciow¹ nazywana jest warstw¹ ukryt¹ z uwagi na to, ¿e jej
+dzia³alnoœæ nie mo¿e byæ obserwowana bezpoœrednio ani na wejœciu
+sieci ani na jej wyjœciu
+Zwykle wszystkie neurony warstwy poprzedniej po³¹czone s¹ ze
+wszystkimi neuronami warstwy nastêpnej.
+Do uczenia perceptronów wielowarstwowych stosuje siê algorytmy
+spadku gradientowego, miêdzy innymi algorytm propagacji
+wstecznej.
+
+Sieci rekurencyjne
+
+Po³¹czenia miêdzy neuronami stanowi¹ graf z cyklami (obieg
+zamkniêty) tzn. sygna³y z warstwy wyjœciowej sieci podawane s¹ z
+powrotem do warstwy wejœciowej.
+
 
 \chapter{Bibliografia}
 \begin{verbatim}
+
+R. Tadeusiewicz, Sieci neuronowe. Akademicka Oficyna Wydawnicza RM, Warszawa, 1993, 1999 
+
 http://www.dbc.wroc.pl/Content/1908/Rusiecki_Algorytmy_PhD.pdf
 
 https://platforma.polsl.pl/rib/pluginfile.php/2498/mod_resource/content/2/Laboratorium/04_BProp.pdf
 
 http://www.neurosoft.edu.pl/media/pdf/tkwater/sztuczna_inteligencja/2_alg_ucz_ssn.pdf
+
+http://zsi.tech.us.edu.pl/~nowak/wi/som.pdf 
+
 \end{verbatim}
-
-
-
- \end{document}
